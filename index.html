@@ -330,6 +330,7 @@
         }
         .show-grid { --hh: min(calc((100vh - 330px) / 2), calc((100vw - 200px) / 4.6)); display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 28px; width: 100%; }
         .show-grid .showcase { --h: var(--hh); margin-top: 0; }
+        .show-grid.videos { --hh: min(calc((100vh - 290px) / 2), calc((100vw - 200px) / 3.6)); }
         .show-item { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
         .show-item img, .show-item video {
             width: 100%; height: auto; display: block; border-radius: 14px; background: #0D1B2A;
@@ -720,13 +721,23 @@
         <div class="slide slide-light" id="slide13">
             <div class="section-tag">Formatos · Video UGC</div>
             <h2>Videos UGC</h2>
-            <div class="showcase" style="--sum: 3.375">
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-educacion.mp4" poster="ugc/sufi-educacion.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-pregunta.mp4" poster="ugc/si-pregunta.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-fraudes.mp4" poster="ugc/sufi-fraudes.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-rutina.mp4" poster="ugc/si-rutina.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-estilo-de-vida.mp4" poster="ugc/sufi-estilo-de-vida.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
-                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-creatina.mp4" poster="ugc/si-creatina.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
+            <div class="show-grid videos">
+                <div class="showcase" style="--sum: 3.370">
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/barbaroja.mp4" poster="ugc/barbaroja.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-educacion.mp4" poster="ugc/sufi-educacion.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.557"><video class="ugc-video" src="ugc/dulcey.mp4" poster="ugc/dulcey.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-rutina.mp4" poster="ugc/si-rutina.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/estruendo.mp4" poster="ugc/estruendo.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/pachha.mp4" poster="ugc/pachha.jpg" muted loop playsinline preload="metadata"></video></div>
+                </div>
+                <div class="showcase" style="--sum: 3.375">
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/parchita.mp4" poster="ugc/parchita.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-fraudes.mp4" poster="ugc/sufi-fraudes.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/ciclico.mp4" poster="ugc/ciclico.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-pregunta.mp4" poster="ugc/si-pregunta.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-estilo-de-vida.mp4" poster="ugc/sufi-estilo-de-vida.jpg" muted loop playsinline preload="metadata"></video></div>
+                    <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-creatina.mp4" poster="ugc/si-creatina.jpg" muted loop playsinline preload="metadata"></video></div>
+                </div>
             </div>
         </div>
 
