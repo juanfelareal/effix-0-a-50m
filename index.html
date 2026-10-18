@@ -306,6 +306,26 @@
         .fmt-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
         .fmt-text { font-size: 20px; font-weight: 800; letter-spacing: -0.4px; color: #0D1B2A; line-height: 1.2; }
 
+        /* ---------- Emails (Lealtad) ---------- */
+        .mails { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; width: 100%; max-width: 1320px; margin-top: 32px; flex: 1; min-height: 0; align-content: center; }
+        .mail { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+        .mail-frame {
+            aspect-ratio: 520 / 780; max-height: calc(100vh - 360px); border-radius: 16px; overflow: hidden; background: #fff; position: relative;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.10);
+            transition: transform 0.3s ease;
+        }
+        .mail-frame:hover { transform: translateY(-4px); }
+        .mail-frame img { width: 100%; display: block; }
+        /* Cada email se desplaza solo, como si alguien lo estuviera leyendo */
+        .slide.active .mail-frame img { animation: mailScroll 9s ease-in-out infinite alternate; }
+        .slide.active .mail:nth-child(2) .mail-frame img { animation-delay: 0.8s; }
+        .slide.active .mail:nth-child(3) .mail-frame img { animation-delay: 1.6s; }
+        .slide.active .mail:nth-child(4) .mail-frame img { animation-delay: 0.4s; }
+        .slide.active .mail:nth-child(5) .mail-frame img { animation-delay: 1.2s; }
+        @keyframes mailScroll { 0%, 12% { transform: translateY(0); } 88%, 100% { transform: translateY(var(--scroll, -40%)); } }
+        .mail-brand { font-size: 15px; font-weight: 900; letter-spacing: -0.3px; color: #0D1B2A; text-align: center; line-height: 1.2; }
+        .mail-brand span { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #9ca3af; margin-top: 3px; }
+
         /* ---------- Navegación ---------- */
         .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 10px; z-index: 100; }
         .nav-btn {
@@ -400,6 +420,8 @@
             .fmt-cell { padding: 16px 14px; flex-direction: column; align-items: flex-start; gap: 10px; }
             .fmt-icon { width: 38px; height: 38px; font-size: 18px; }
             .fmt-text { font-size: 15px; }
+            .mails { grid-template-columns: repeat(2, 1fr); gap: 14px; flex: none; margin-top: 24px; }
+            .mail-frame { max-height: none; }
             .real-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; margin-top: 24px; }
             .real-letter { font-size: 96px; letter-spacing: -4px; }
             .real-arrow { height: 48px; margin: 10px 0 12px; }
@@ -693,8 +715,36 @@
             </div>
         </div>
 
-        <!-- ============ SLIDE 15 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
-        <div class="slide slide-dark slide-cierre" id="slide15">
+        <!-- ============ SLIDE 15 — EMAILS (LEALTAD) ============ -->
+        <div class="slide slide-light" id="slide15">
+            <div class="section-tag">Lealtad · Email marketing</div>
+            <h2>Emails que hemos diseñado</h2>
+            <div class="mails">
+                <div class="mail">
+                    <div class="mail-frame"><img src="emails/guuut-bienvenida.jpg" alt="Email Guuut — Bienvenida"></div>
+                    <div class="mail-brand">Guuut<span>Bienvenida</span></div>
+                </div>
+                <div class="mail">
+                    <div class="mail-frame"><img src="emails/moi-bienvenida.jpg" alt="Email MOI — Bienvenida"></div>
+                    <div class="mail-brand">MOI<span>Bienvenida</span></div>
+                </div>
+                <div class="mail">
+                    <div class="mail-frame"><img src="emails/natnack-secuencia.jpg" alt="Email Natnack — Secuencia de bienvenida"></div>
+                    <div class="mail-brand">Natnack<span>Secuencia de bienvenida</span></div>
+                </div>
+                <div class="mail">
+                    <div class="mail-frame"><img src="emails/guuut-campana.jpg" alt="Email Guuut — Campaña"></div>
+                    <div class="mail-brand">Guuut<span>Campaña</span></div>
+                </div>
+                <div class="mail">
+                    <div class="mail-frame"><img src="emails/moi-cupon.jpg" alt="Email MOI — Cupón por vencer"></div>
+                    <div class="mail-brand">MOI<span>Cupón por vencer</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 16 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
+        <div class="slide slide-dark slide-cierre" id="slide16">
             <img src="logo-la-real.png" alt="LA REAL" style="width: 110px; margin-bottom: 36px; opacity: 0.9;">
             <h2>Últimos <span class="highlight">consejos</span></h2>
             <div class="tips">
@@ -716,7 +766,7 @@
     </div>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-counter" id="slideCounter">1 / 15</div>
+    <div class="slide-counter" id="slideCounter">1 / 16</div>
     <div class="fullscreen-hint" id="fullscreenHint">Presiona F para pantalla completa</div>
     <div class="navigation">
         <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
@@ -731,8 +781,21 @@
         const brandsHTML = BRANDS.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_HEIGHT[b] ? ` style="height:${LOGO_HEIGHT[b]}px"` : ''}>`).join('');
         document.getElementById('brandsTrack').innerHTML = brandsHTML + brandsHTML;
 
+
+        // Emails: calcula cuánto debe desplazarse cada uno para llegar al final
+        function setMailScroll() {
+            document.querySelectorAll('.mail-frame').forEach(fr => {
+                const img = fr.querySelector('img');
+                if (!img.complete) { img.onload = setMailScroll; return; }
+                const extra = img.offsetHeight - fr.clientHeight;
+                img.style.setProperty('--scroll', extra > 0 ? `-${extra}px` : '0px');
+            });
+        }
+        window.addEventListener('load', setMailScroll);
+        window.addEventListener('resize', setMailScroll);
+
         let currentSlide = 1;
-        const totalSlides = 15;
+        const totalSlides = 16;
 
         function showSlide(n) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -758,6 +821,7 @@
 
             // Reset scroll for mobile
             slide.scrollTop = 0;
+            setMailScroll();
         }
 
         function nextSlide() {
