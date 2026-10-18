@@ -338,6 +338,14 @@
         }
         .show-item span { font-size: 13px; font-weight: 800; color: #0D1B2A; white-space: nowrap; }
 
+        /* ---------- QR Instagram (cierre) ---------- */
+        .ig-cta { display: flex; align-items: center; gap: 22px; margin-top: 40px; text-decoration: none; }
+        .ig-qr { background: #fff; border-radius: 16px; padding: 10px; width: 128px; height: 128px; box-shadow: 0 0 30px rgba(74,222,128,0.15); }
+        .ig-qr img { width: 100%; height: 100%; display: block; }
+        .ig-text { text-align: left; }
+        .ig-tag { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94A3B8; }
+        .ig-handle { font-size: 34px; font-weight: 900; letter-spacing: -1px; color: #4ADE80; margin-top: 4px; }
+
         /* ---------- Navegación ---------- */
         .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 10px; z-index: 100; }
         .nav-btn {
@@ -360,6 +368,10 @@
             .real-arrow { height: 64px; }
             .principles { margin-top: 36px; }
             .show-grid { margin-top: 18px; gap: 10px; }
+            .slide-cierre > img { width: 80px !important; margin-bottom: 20px !important; }
+            .tips { margin-top: 28px; }
+            .ig-cta { margin-top: 26px; }
+            .ig-qr { width: 108px; height: 108px; }
             .show-item span { font-size: 12px; }
         }
 
@@ -427,6 +439,9 @@
             .tip { padding: 22px; gap: 10px; }
             .tip-num { font-size: 40px; }
             .tip-text { font-size: 21px; }
+            .ig-cta { gap: 14px; margin-top: 28px; }
+            .ig-qr { width: 96px; height: 96px; }
+            .ig-handle { font-size: 22px; }
             .angle-table { grid-template-columns: 1fr; gap: 6px; }
             .angle-head, .angle-arrow { display: none; }
             .angle-who { font-size: 17px; padding: 14px 18px 4px; box-shadow: none; border-radius: 16px 16px 0 0; }
@@ -829,6 +844,13 @@
                     <div class="tip-text">Trabajen enfocados</div>
                 </div>
             </div>
+            <a class="ig-cta" href="https://www.instagram.com/juanfleonleon/" target="_blank" rel="noopener">
+                <div class="ig-qr"><img src="qr-instagram.svg" alt="QR a Instagram @juanfleonleon"></div>
+                <div class="ig-text">
+                    <div class="ig-tag">Sígueme en Instagram</div>
+                    <div class="ig-handle">@juanfleonleon</div>
+                </div>
+            </a>
         </div>
 
     </div>
