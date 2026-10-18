@@ -338,13 +338,20 @@
         }
         .show-item span { font-size: 13px; font-weight: 800; color: #0D1B2A; white-space: nowrap; }
 
-        /* ---------- QR Instagram (cierre) ---------- */
-        .ig-cta { display: flex; align-items: center; gap: 22px; margin-top: 40px; text-decoration: none; }
-        .ig-qr { background: #fff; border-radius: 16px; padding: 10px; width: 128px; height: 128px; box-shadow: 0 0 30px rgba(74,222,128,0.15); }
+        /* ---------- Cierre: consejos a la izquierda, QR grande a la derecha ---------- */
+        .closing-layout { display: flex; align-items: center; justify-content: center; gap: clamp(40px, 7vw, 110px); width: 100%; max-width: 1200px; }
+        .closing-left { flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; max-width: 560px; }
+        .closing-logo { width: 90px; margin-bottom: 28px; opacity: 0.9; }
+        .closing-left h2 { text-align: left; }
+        .closing-left .tips { grid-template-columns: 1fr; gap: 14px; margin-top: 32px; width: 100%; }
+        .closing-left .tip { flex-direction: row; align-items: center; gap: 22px; padding: 20px 26px; }
+        .closing-left .tip-num { font-size: 44px; }
+        .closing-left .tip-text { font-size: 26px; }
+        .ig-cta { display: flex; flex-direction: column; align-items: center; text-decoration: none; flex-shrink: 0; }
+        .ig-qr { background: #fff; border-radius: 24px; padding: 18px; width: min(36vh, 330px); height: min(36vh, 330px); box-shadow: 0 0 60px rgba(74,222,128,0.2); }
         .ig-qr img { width: 100%; height: 100%; display: block; }
-        .ig-text { text-align: left; }
-        .ig-tag { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94A3B8; }
-        .ig-handle { font-size: 34px; font-weight: 900; letter-spacing: -1px; color: #4ADE80; margin-top: 4px; }
+        .ig-tag { margin-top: 26px; font-size: 13px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94A3B8; }
+        .ig-handle { font-size: 38px; font-weight: 900; letter-spacing: -1px; color: #4ADE80; margin-top: 6px; }
 
         /* ---------- Modo exportación (?export): sin controles, para generar el PDF ---------- */
         .export .navigation, .export .slide-counter, .export .fullscreen-hint, .export .progress { display: none !important; }
@@ -376,10 +383,6 @@
             .real-arrow { height: 64px; }
             .principles { margin-top: 36px; }
             .show-grid { margin-top: 18px; gap: 10px; }
-            .slide-cierre > img { width: 80px !important; margin-bottom: 20px !important; }
-            .tips { margin-top: 28px; }
-            .ig-cta { margin-top: 26px; }
-            .ig-qr { width: 108px; height: 108px; }
             .show-item span { font-size: 12px; }
         }
 
@@ -447,9 +450,11 @@
             .tip { padding: 22px; gap: 10px; }
             .tip-num { font-size: 40px; }
             .tip-text { font-size: 21px; }
-            .ig-cta { gap: 14px; margin-top: 28px; }
-            .ig-qr { width: 96px; height: 96px; }
-            .ig-handle { font-size: 22px; }
+            .closing-layout { flex-direction: column; gap: 36px; }
+            .closing-left .tip-text { font-size: 19px; }
+            .closing-left .tip-num { font-size: 32px; }
+            .ig-qr { width: 200px; height: 200px; }
+            .ig-handle { font-size: 24px; }
             .angle-table { grid-template-columns: 1fr; gap: 6px; }
             .angle-head, .angle-arrow { display: none; }
             .angle-who { font-size: 17px; padding: 14px 18px 4px; box-shadow: none; border-radius: 16px 16px 0 0; }
@@ -836,29 +841,31 @@
 
         <!-- ============ SLIDE 17 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
         <div class="slide slide-dark slide-cierre" id="slide17">
-            <img src="logo-la-real.png" alt="LA REAL" style="width: 110px; margin-bottom: 36px; opacity: 0.9;">
-            <h2>Últimos <span class="highlight">consejos</span></h2>
-            <div class="tips">
-                <div class="tip">
-                    <div class="tip-num">01</div>
-                    <div class="tip-text">Tengan un equipo de cracks</div>
+            <div class="closing-layout">
+                <div class="closing-left">
+                    <img src="logo-la-real.png" alt="LA REAL" class="closing-logo">
+                    <h2>Últimos <span class="highlight">consejos</span></h2>
+                    <div class="tips">
+                        <div class="tip">
+                            <div class="tip-num">01</div>
+                            <div class="tip-text">Tengan un equipo de cracks</div>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-num">02</div>
+                            <div class="tip-text">Créanse el cuento</div>
+                        </div>
+                        <div class="tip">
+                            <div class="tip-num">03</div>
+                            <div class="tip-text">Trabajen enfocados</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="tip">
-                    <div class="tip-num">02</div>
-                    <div class="tip-text">Créanse el cuento</div>
-                </div>
-                <div class="tip">
-                    <div class="tip-num">03</div>
-                    <div class="tip-text">Trabajen enfocados</div>
-                </div>
-            </div>
-            <a class="ig-cta" href="https://www.instagram.com/juanfleonleon/" target="_blank" rel="noopener">
-                <div class="ig-qr"><img src="qr-instagram.svg" alt="QR a Instagram @juanfleonleon"></div>
-                <div class="ig-text">
+                <a class="ig-cta" href="https://www.instagram.com/juanfleonleon/" target="_blank" rel="noopener">
+                    <div class="ig-qr"><img src="qr-instagram.svg" alt="QR a Instagram @juanfleonleon"></div>
                     <div class="ig-tag">Sígueme en Instagram</div>
                     <div class="ig-handle">@juanfleonleon</div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
 
     </div>
