@@ -115,6 +115,11 @@
         .ba-grid.wide .ba-col { justify-content: center; }
         .ba-grid.wide .ba-frame { flex: none; }
         .ba-grid.wide .ba-arrow { margin-top: 44px; }
+        .ba-date { font-size: 14px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; }
+        .ba-mid { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 40px; }
+        .ba-mid .ba-arrow { margin-top: 0; }
+        .ba-span { font-size: 15px; font-weight: 800; color: #0D1B2A; text-align: center; line-height: 1.3; max-width: 110px; }
+        .ba-span strong { display: block; font-size: 34px; font-weight: 900; letter-spacing: -1.5px; color: #16a34a; }
         .ba-arrow {
             width: 56px; height: 56px; border-radius: 50%; background: #0D1B2A;
             display: flex; align-items: center; justify-content: center; margin-top: 40px;
@@ -224,6 +229,9 @@
             .ba-col { height: auto; }
             .ba-frame { flex: none; height: 300px; }
             .ba-arrow { margin: 0 auto; transform: rotate(90deg); width: 44px; height: 44px; }
+            .ba-mid { margin-top: 0; flex-direction: row; justify-content: center; }
+            .ba-mid .ba-arrow { margin: 0; }
+            .ba-span { max-width: none; text-align: left; }
 
             .principles { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
             .principle { padding: 26px 22px; gap: 14px; }
@@ -266,13 +274,18 @@
                 <div class="ba-col">
                     <div class="ba-label antes">Antes</div>
                     <div class="ba-frame photo"><img src="contexto-antes.jpg" alt="Antes: Maderitos naciendo, octubre 2015"></div>
+                    <div class="ba-date">17 octubre 2015</div>
                 </div>
-                <div class="ba-arrow">
+                <div class="ba-mid">
+                    <div class="ba-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </div>
+                    <div class="ba-span"><strong>8 años</strong>de esto a esto</div>
                 </div>
                 <div class="ba-col">
                     <div class="ba-label despues">Después</div>
-                    <div class="ba-frame photo"><img src="contexto-despues.jpg" alt="Después: $17,16M en ventas en un día"></div>
+                    <div class="ba-frame photo"><img src="contexto-despues.jpg" alt="Después: $17,16M en ventas en un día, 01 enero 2023"></div>
+                    <div class="ba-date">01 enero 2023</div>
                 </div>
             </div>
         </div>
