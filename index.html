@@ -189,14 +189,14 @@
         .slide.active .real-col:nth-child(4) .real-sub { animation-delay: 3.9s; }
 
         /* ---------- Principio 01: números ---------- */
-        .nums-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; width: 100%; max-width: 1000px; margin-top: 48px; }
+        .nums-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; width: 100%; max-width: 1000px; margin-top: 36px; }
         .receipt {
-            background: #fff; border-radius: 20px; padding: 32px 36px;
+            background: #fff; border-radius: 20px; padding: 24px 36px 28px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
         }
-        .receipt-row { display: flex; justify-content: space-between; align-items: baseline; padding: 14px 0; border-bottom: 1px dashed rgba(13,27,42,0.12); }
-        .receipt-label { font-size: 18px; font-weight: 600; color: #374151; }
-        .receipt-value { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #0D1B2A; }
+        .receipt-row { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; border-bottom: 1px dashed rgba(13,27,42,0.12); }
+        .receipt-label { font-size: 17px; font-weight: 600; color: #374151; }
+        .receipt-value { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #0D1B2A; }
         .receipt-value.minus { color: #DC2626; }
         .receipt-total { display: flex; justify-content: space-between; align-items: baseline; padding-top: 18px; }
         .receipt-total .receipt-label { font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #0D1B2A; }
@@ -209,7 +209,7 @@
         .story-tag { font-size: 11px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #4ADE80; }
         .story-big { font-size: 36px; font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; }
         .story-small { font-size: 17px; font-weight: 500; color: #94A3B8; line-height: 1.45; }
-        .kicker { margin-top: 40px; font-size: 26px; font-weight: 800; letter-spacing: -0.6px; color: #0D1B2A; text-align: center; }
+        .kicker { margin-top: 32px; font-size: 26px; font-weight: 800; letter-spacing: -0.6px; color: #0D1B2A; text-align: center; }
         .kicker .highlight { color: #16a34a; }
 
         /* ---------- Principio 02: problema real ---------- */
@@ -236,6 +236,50 @@
         .solo-word { font-size: 150px; font-weight: 900; letter-spacing: -7px; line-height: 0.95; color: #fff; }
         .solo-word .highlight { color: #4ADE80; }
         .slide.active .solo-word { animation: rise 0.8s ease both; animation-delay: 0.15s; }
+
+        /* ---------- Etapas del Método REAL ---------- */
+        .stage-title { display: flex; align-items: center; gap: 22px; }
+        .stage-letter {
+            width: 84px; height: 84px; border-radius: 22px; background: #0D1B2A; color: #4ADE80;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 52px; font-weight: 900; letter-spacing: -2px; flex-shrink: 0;
+        }
+        .stage-title h2 { text-align: left; }
+        .stage-sub { display: block; font-size: 15px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #16a34a; margin-top: 8px; }
+        .stage-logo-card {
+            margin-top: 64px; background: #fff; border-radius: 24px; padding: 64px 90px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .stage-logo-card img { width: 520px; max-width: 100%; display: block; }
+        .shots { display: flex; gap: 40px; justify-content: center; align-items: center; margin-top: 36px; flex: 1; min-height: 0; width: 100%; }
+        .shot { display: flex; flex-direction: column; align-items: center; gap: 14px; height: 100%; min-height: 0; }
+        .shot img { max-height: calc(100% - 40px); width: auto; border-radius: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.10); }
+        .shot-cap { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #6b7280; }
+        .loyal-lead { font-size: 30px; font-weight: 800; letter-spacing: -0.8px; color: #0D1B2A; margin-top: 44px; text-align: center; }
+        .chips { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+        .chip { padding: 12px 24px; border-radius: 50px; background: #fff; font-size: 17px; font-weight: 700; color: #374151; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.04); }
+        .chip.muted { background: transparent; box-shadow: none; color: #9ca3af; }
+        .loyal-key {
+            margin-top: 40px; background: #0D1B2A; border-radius: 24px; padding: 34px 56px; text-align: center;
+            box-shadow: 0 12px 40px rgba(13,27,42,0.2);
+        }
+        .loyal-key-tag { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94A3B8; }
+        .loyal-key-text { font-size: 48px; font-weight: 900; letter-spacing: -2px; color: #4ADE80; margin-top: 8px; line-height: 1.05; }
+
+        /* ---------- Cierre: últimos consejos ---------- */
+        .slide-cierre { justify-content: center; text-align: center; padding-top: 80px; }
+        .tips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1050px; margin-top: 48px; }
+        .tip {
+            border-radius: 20px; padding: 32px 28px; text-align: left;
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+            display: flex; flex-direction: column; gap: 18px;
+        }
+        .tip-num { font-size: 56px; font-weight: 900; letter-spacing: -3px; line-height: 0.9; color: #4ADE80; }
+        .tip-text { font-size: 28px; font-weight: 800; letter-spacing: -0.8px; line-height: 1.15; color: #fff; }
+        .slide.active .tip { animation: rise 0.6s ease both; }
+        .slide.active .tip:nth-child(1) { animation-delay: 0.2s; }
+        .slide.active .tip:nth-child(2) { animation-delay: 0.4s; }
+        .slide.active .tip:nth-child(3) { animation-delay: 0.6s; }
 
         /* ---------- Navegación ---------- */
         .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 10px; z-index: 100; }
@@ -305,6 +349,21 @@
             .jump-arrow { font-size: 24px; }
             .jump-label { margin-left: -6px; padding-bottom: 4px; }
             .solo-word { font-size: 64px; letter-spacing: -3px; }
+            .stage-title { gap: 14px; }
+            .stage-letter { width: 56px; height: 56px; border-radius: 16px; font-size: 34px; }
+            .stage-sub { font-size: 11px; letter-spacing: 2px; }
+            .stage-logo-card { margin-top: 36px; padding: 36px 28px; }
+            .shots { flex-direction: column; flex: none; gap: 28px; margin-top: 28px; }
+            .shot { height: auto; }
+            .shot img { max-height: none; max-width: 100%; }
+            .loyal-lead { font-size: 22px; margin-top: 28px; }
+            .chip { font-size: 14px; padding: 10px 18px; }
+            .loyal-key { padding: 24px 28px; margin-top: 28px; }
+            .loyal-key-text { font-size: 30px; letter-spacing: -1px; }
+            .tips { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+            .tip { padding: 22px; gap: 10px; }
+            .tip-num { font-size: 40px; }
+            .tip-text { font-size: 21px; }
             .real-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; margin-top: 24px; }
             .real-letter { font-size: 96px; letter-spacing: -4px; }
             .real-arrow { height: 48px; margin: 10px 0 12px; }
@@ -406,8 +465,11 @@
             <div class="nums-grid">
                 <div class="receipt">
                     <div class="receipt-row"><span class="receipt-label">Tu margen</span><span class="receipt-value">35%</span></div>
-                    <div class="receipt-row"><span class="receipt-label">Pauta</span><span class="receipt-value minus">−25%</span></div>
-                    <div class="receipt-row"><span class="receipt-label">Pasarela + Shopify</span><span class="receipt-value minus">−3%</span></div>
+                    <div class="receipt-row"><span class="receipt-label">Pauta</span><span class="receipt-value minus">−20%</span></div>
+                    <div class="receipt-row"><span class="receipt-label">Pasarela de pagos</span><span class="receipt-value minus">−3%</span></div>
+                    <div class="receipt-row"><span class="receipt-label">Shopify y apps</span><span class="receipt-value minus">−2%</span></div>
+                    <div class="receipt-row"><span class="receipt-label">Fulfillment y empaque</span><span class="receipt-value minus">−2%</span></div>
+                    <div class="receipt-row"><span class="receipt-label">Envíos que asumes</span><span class="receipt-value minus">−1%</span></div>
                     <div class="receipt-total"><span class="receipt-label">Lo que te queda</span><span class="receipt-value">7%</span></div>
                 </div>
                 <div class="story-card">
@@ -477,10 +539,106 @@
             </div>
         </div>
 
+        <!-- ============ SLIDE 9 — R REVENUE ============ -->
+        <div class="slide slide-light" id="slide9">
+            <div class="section-tag">Método REAL</div>
+            <div class="stage-title">
+                <div class="stage-letter">R</div>
+                <h2>Revenue<span class="stage-sub">Tráfico</span></h2>
+            </div>
+            <div class="principles">
+                <div class="principle">
+                    <div class="principle-num">01</div>
+                    <div class="principle-bar"></div>
+                    <div class="principle-text">Identifica tus ángulos de venta y tu cliente ideal</div>
+                </div>
+                <div class="principle">
+                    <div class="principle-num">02</div>
+                    <div class="principle-bar"></div>
+                    <div class="principle-text">Identifica formatos y desarróllalos todos</div>
+                </div>
+                <div class="principle">
+                    <div class="principle-num">03</div>
+                    <div class="principle-bar"></div>
+                    <div class="principle-text">Escala lo que funcione</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 10 — E EFICIENCIA ============ -->
+        <div class="slide slide-light" id="slide10">
+            <div class="section-tag">Método REAL</div>
+            <div class="stage-title">
+                <div class="stage-letter">E</div>
+                <h2>Eficiencia<span class="stage-sub">Conversión</span></h2>
+            </div>
+            <div class="stage-logo-card">
+                <img src="logos/convertmate.svg" alt="Convertmate">
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 11 — A AMPLIFICACIÓN ============ -->
+        <div class="slide slide-light" id="slide11">
+            <div class="section-tag">Método REAL</div>
+            <div class="stage-title">
+                <div class="stage-letter">A</div>
+                <h2>Amplificación</h2>
+            </div>
+            <div class="shots">
+                <div class="shot">
+                    <img src="amp-producto.jpg" alt="Complementos en la página de producto">
+                    <div class="shot-cap">En la página de producto</div>
+                </div>
+                <div class="shot">
+                    <img src="amp-carrito.jpg" alt="Complementos en el carrito">
+                    <div class="shot-cap">En el carrito</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 12 — L LEALTAD ============ -->
+        <div class="slide slide-light" id="slide12">
+            <div class="section-tag">Método REAL</div>
+            <div class="stage-title">
+                <div class="stage-letter">L</div>
+                <h2>Lealtad</h2>
+            </div>
+            <div class="loyal-lead">Convierte tus clientes en fans.</div>
+            <div class="chips">
+                <span class="chip">Email marketing</span>
+                <span class="chip">WhatsApp marketing</span>
+                <span class="chip muted">etc.</span>
+            </div>
+            <div class="loyal-key">
+                <div class="loyal-key-tag">Pero más importante</div>
+                <div class="loyal-key-text">Experiencia del cliente</div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 13 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
+        <div class="slide slide-dark slide-cierre" id="slide13">
+            <img src="logo-la-real.png" alt="LA REAL" style="width: 110px; margin-bottom: 36px; opacity: 0.9;">
+            <h2>Últimos <span class="highlight">consejos</span></h2>
+            <div class="tips">
+                <div class="tip">
+                    <div class="tip-num">01</div>
+                    <div class="tip-text">Tengan un equipo de cracks</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-num">02</div>
+                    <div class="tip-text">Créanse el cuento</div>
+                </div>
+                <div class="tip">
+                    <div class="tip-num">03</div>
+                    <div class="tip-text">Trabajen enfocados</div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-counter" id="slideCounter">1 / 8</div>
+    <div class="slide-counter" id="slideCounter">1 / 13</div>
     <div class="fullscreen-hint" id="fullscreenHint">Presiona F para pantalla completa</div>
     <div class="navigation">
         <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
@@ -496,7 +654,7 @@
         document.getElementById('brandsTrack').innerHTML = brandsHTML + brandsHTML;
 
         let currentSlide = 1;
-        const totalSlides = 8;
+        const totalSlides = 13;
 
         function showSlide(n) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
