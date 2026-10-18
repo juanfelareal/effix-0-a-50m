@@ -367,8 +367,10 @@
 
     <script>
         // Logos de marcas (de larealmarketing.com) — se duplican para el loop infinito
-        const BRANDS = ['leonisa','barba-roja','ciclico','parchita','mister-jack','once','gratitud','pachha','enkor','zorro-jaguar','khol','cambil','mantta','luckyme'];
-        const brandsHTML = BRANDS.map(b => `<img src="logos/${b}.png" alt="${b}">`).join('');
+        // Algunos logos llevan alto propio para que se vean del mismo peso visual
+        const BRANDS = ['leonisa.png','natnack.svg','guuut.png','barba-roja.png','ciclico.png','parchita.png','mister-jack.png','once.png','gratitud.png','pachha.png','enkor.png','zorro-jaguar.png','khol.png','cambil.png','mantta.png','luckyme.png'];
+        const LOGO_HEIGHT = { 'natnack.svg': 19, 'guuut.png': 46 };
+        const brandsHTML = BRANDS.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_HEIGHT[b] ? ` style="height:${LOGO_HEIGHT[b]}px"` : ''}>`).join('');
         document.getElementById('brandsTrack').innerHTML = brandsHTML + brandsHTML;
 
         let currentSlide = 1;
