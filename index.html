@@ -110,6 +110,11 @@
             flex-direction: column; gap: 12px; color: #9ca3af; font-size: 14px; font-weight: 600;
         }
         .ba-frame.placeholder svg { width: 40px; height: 40px; opacity: 0.5; }
+        /* Variante para capturas horizontales (gráficas): más ancho y etiqueta pegada a la imagen */
+        .ba-grid.wide { max-width: 1320px; gap: 20px; }
+        .ba-grid.wide .ba-col { justify-content: center; }
+        .ba-grid.wide .ba-frame { flex: none; }
+        .ba-grid.wide .ba-arrow { margin-top: 44px; }
         .ba-arrow {
             width: 56px; height: 56px; border-radius: 50%; background: #0D1B2A;
             display: flex; align-items: center; justify-content: center; margin-top: 40px;
@@ -254,8 +259,6 @@
         </div>
 
         <!-- ============ SLIDE 2 — CONTEXTO ============ -->
-        <!-- Para poner las fotos: reemplazar cada <div class="ba-frame placeholder">…</div>
-             por <div class="ba-frame"><img src="contexto-antes.jpg" alt="Antes"></div> -->
         <div class="slide slide-light" id="slide2">
             <div class="section-tag">Contexto</div>
             <h2>Un poco de contexto</h2>
@@ -278,23 +281,17 @@
         <div class="slide slide-light" id="slide3">
             <div class="section-tag">Caso real</div>
             <h2>Último caso donde aplicamos esto</h2>
-            <div class="ba-grid">
+            <div class="ba-grid wide">
                 <div class="ba-col">
                     <div class="ba-label antes">Antes</div>
-                    <div class="ba-frame placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                        Foto antes
-                    </div>
+                    <div class="ba-frame photo"><img src="caso-antes.jpg" alt="Antes: ventas junio 2026"></div>
                 </div>
                 <div class="ba-arrow">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </div>
                 <div class="ba-col">
                     <div class="ba-label despues">Después</div>
-                    <div class="ba-frame placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                        Foto después
-                    </div>
+                    <div class="ba-frame photo"><img src="caso-despues.jpg" alt="Después: $68.163.434 en ventas en septiembre 2026"></div>
                 </div>
             </div>
         </div>
