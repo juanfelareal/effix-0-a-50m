@@ -77,6 +77,7 @@
         .brands-row img { height: var(--lh); width: auto; filter: brightness(0) invert(1); opacity: 0.75; transition: opacity 0.3s ease; }
         .brands-row.top img { opacity: 0.95; }
         .brands-row img:hover { opacity: 1; }
+        .brands-row img.color { filter: none; opacity: 1; }
 
         /* ---------- Slides 2-3: antes / después ---------- */
         .ba-grid {
@@ -234,6 +235,8 @@
         .slide-solo { justify-content: center; text-align: center; padding-top: 80px; }
         .solo-word { font-size: 150px; font-weight: 900; letter-spacing: -7px; line-height: 0.95; color: #fff; }
         .solo-word .highlight { color: #4ADE80; }
+        .solo-sub { margin-top: 36px; font-size: 22px; font-weight: 700; letter-spacing: 8px; text-transform: uppercase; color: #94A3B8; }
+        .slide.active .solo-sub { animation: rise 0.8s ease both; animation-delay: 0.5s; }
         .slide.active .solo-word { animation: rise 0.8s ease both; animation-delay: 0.15s; }
 
         /* ---------- Etapas del Método REAL ---------- */
@@ -391,6 +394,7 @@
             .jump-arrow { font-size: 24px; }
             .jump-label { margin-left: -6px; padding-bottom: 4px; }
             .solo-word { font-size: 64px; letter-spacing: -3px; }
+            .solo-sub { font-size: 14px; letter-spacing: 5px; margin-top: 20px; }
             .stage-title { gap: 14px; }
             .stage-letter { width: 56px; height: 56px; border-radius: 16px; font-size: 34px; }
             .stage-sub { font-size: 11px; letter-spacing: 2px; }
@@ -572,6 +576,7 @@
         <!-- ============ SLIDE 7 — PRINCIPIO 03: MENTALIDAD ============ -->
         <div class="slide slide-dark slide-solo" id="slide7">
             <div class="solo-word">Tu <span class="highlight">mentalidad</span></div>
+            <div class="solo-sub">Historia Cúcuta</div>
         </div>
 
         <!-- ============ SLIDE 8 — MÉTODO REAL ============ -->
@@ -774,10 +779,12 @@
         // Algunos logos llevan alto propio para que se vean del mismo peso visual
         // Logos de marcas en 2 líneas: arriba las más grandes. Nunca incluir Kryolan.
         const BRANDS_TOP = ['leonisa.png','parchita.png','barba-roja.png','ciclico.png','natnack.svg','guuut.png','once.png'];
-        const BRANDS_BOTTOM = ['mister-jack.png','gratitud.png','pachha.png','zorro-jaguar.png','enkor.png','khol.png','cambil.png','mantta.png','luckyme.png'];
+        const BRANDS_BOTTOM = ['dulcey.png','adriza.svg','estruendo.png','detalles-del-campo.png','inducrayones.png','gratitud.png','pachha.png','zorro-jaguar.png'];
         // Alto propio (en proporción al alto base) para que todos pesen igual visualmente
-        const LOGO_SCALE = { 'natnack.svg': 0.42, 'guuut.png': 1.05, 'parchita.png': 1.2 };
-        const logosHTML = list => list.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_SCALE[b] ? ` style="height:calc(${LOGO_SCALE[b]} * var(--lh))"` : ''}>`).join('');
+        const LOGO_SCALE = { 'natnack.svg': 0.42, 'guuut.png': 1.05, 'parchita.png': 1.2, 'dulcey.png': 0.75, 'adriza.svg': 0.95, 'estruendo.png': 0.45, 'detalles-del-campo.png': 1.25, 'inducrayones.png': 1.15, 'zorro-jaguar.png': 1.35 };
+        // Logos a color (no se pasan a blanco)
+        const LOGO_COLOR = ['inducrayones.png'];
+        const logosHTML = list => list.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_COLOR.includes(b) ? ' class="color"' : ''}${LOGO_SCALE[b] ? ` style="height:calc(${LOGO_SCALE[b]} * var(--lh))"` : ''}>`).join('');
         document.getElementById('brandsTop').innerHTML = logosHTML(BRANDS_TOP);
         document.getElementById('brandsBottom').innerHTML = logosHTML(BRANDS_BOTTOM);
 
