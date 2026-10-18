@@ -328,6 +328,8 @@
             --h: min(calc(100vh - 340px), calc((100vw - 260px) / var(--sum)));
             display: flex; gap: 14px; margin-top: 32px; width: calc(var(--h) * var(--sum) + 70px); max-width: 100%;
         }
+        .show-grid { --hh: min(calc((100vh - 330px) / 2), calc((100vw - 200px) / 4.6)); display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 28px; width: 100%; }
+        .show-grid .showcase { --h: var(--hh); margin-top: 0; }
         .show-item { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
         .show-item img, .show-item video {
             width: 100%; height: auto; display: block; border-radius: 14px; background: #0D1B2A;
@@ -356,6 +358,8 @@
             .real-letter { font-size: 150px; }
             .real-arrow { height: 64px; }
             .principles { margin-top: 36px; }
+            .show-grid { margin-top: 18px; gap: 10px; }
+            .show-item span { font-size: 12px; }
         }
 
         /* ---------- Mobile ---------- */
@@ -692,13 +696,23 @@
         <div class="slide slide-light" id="slide12">
             <div class="section-tag">Formatos · Estático</div>
             <h2>Piezas gráficas para pauta</h2>
-            <div class="showcase" style="--sum: 4.050">
-                <div class="show-item" style="flex: 0.562"><img src="pauta/guuut.jpg" alt="Pieza de pauta Guuut"><span>Guuut</span></div>
-                <div class="show-item" style="flex: 0.800"><img src="pauta/adriza.jpg" alt="Pieza de pauta Adriza"><span>Adriza</span></div>
-                <div class="show-item" style="flex: 1.000"><img src="pauta/bites.jpg" alt="Pieza de pauta Bites"><span>Bites</span></div>
-                <div class="show-item" style="flex: 0.562"><img src="pauta/estruendo.jpg" alt="Pieza de pauta Estruendo"><span>Estruendo</span></div>
-                <div class="show-item" style="flex: 0.562"><img src="pauta/dulcey.jpg" alt="Pieza de pauta Dulcey"><span>Dulcey</span></div>
-                <div class="show-item" style="flex: 0.562"><img src="pauta/detalles-del-campo.jpg" alt="Pieza de pauta Detalles del Campo"><span>Detalles del Campo</span></div>
+            <div class="show-grid">
+                <div class="showcase" style="--sum: 4.050">
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/guuut.jpg" alt="Pieza de pauta Guuut"><span>Guuut</span></div>
+                    <div class="show-item" style="flex: 0.800"><img src="pauta/adriza.jpg" alt="Pieza de pauta Adriza"><span>Adriza</span></div>
+                    <div class="show-item" style="flex: 1.000"><img src="pauta/bites.jpg" alt="Pieza de pauta Bites"><span>Bites</span></div>
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/estruendo.jpg" alt="Pieza de pauta Estruendo"><span>Estruendo</span></div>
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/dulcey.jpg" alt="Pieza de pauta Dulcey"><span>Dulcey</span></div>
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/detalles-del-campo.jpg" alt="Pieza de pauta Detalles del Campo"><span>Detalles del Campo</span></div>
+                </div>
+                <div class="showcase" style="--sum: 4.487">
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/dulcey-2.jpg" alt="Pieza de pauta Dulcey"><span>Dulcey</span></div>
+                    <div class="show-item" style="flex: 1.000"><img src="pauta/pachha.jpg" alt="Pieza de pauta Pachha"><span>Pachha</span></div>
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/estruendo-2.jpg" alt="Pieza de pauta Estruendo"><span>Estruendo</span></div>
+                    <div class="show-item" style="flex: 0.800"><img src="pauta/adriza-2.jpg" alt="Pieza de pauta Adriza"><span>Adriza</span></div>
+                    <div class="show-item" style="flex: 0.562"><img src="pauta/detalles-del-campo-2.jpg" alt="Pieza de pauta Detalles del Campo"><span>Detalles del Campo</span></div>
+                    <div class="show-item" style="flex: 1.000"><img src="pauta/bites-2.jpg" alt="Pieza de pauta Bites"><span>Bites</span></div>
+                </div>
             </div>
         </div>
 
