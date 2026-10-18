@@ -69,19 +69,14 @@
             margin-top: 64px; margin-bottom: 26px;
             font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #64748B;
         }
-        .brands-marquee {
-            width: 100%; max-width: 1200px; overflow: hidden;
-            -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-                    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
-        }
-        .brands-track { display: flex; align-items: center; gap: 64px; width: max-content; animation: marquee 40s linear infinite; }
-        .brands-track img {
-            height: 44px; width: auto; flex-shrink: 0;
-            filter: brightness(0) invert(1); opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-        .brands-track img:hover { opacity: 1; }
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        /* Logos en 2 líneas fijas (sirve para PDF): arriba las marcas más grandes */
+        .brands-rows { display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%; max-width: 1200px; }
+        .brands-row { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 26px clamp(22px, 3.2vw, 52px); }
+        .brands-row { --lh: clamp(30px, 2.6vw, 40px); }
+        .brands-row.top { --lh: 50px; }
+        .brands-row img { height: var(--lh); width: auto; filter: brightness(0) invert(1); opacity: 0.75; transition: opacity 0.3s ease; }
+        .brands-row.top img { opacity: 0.95; }
+        .brands-row img:hover { opacity: 1; }
 
         /* ---------- Slides 2-3: antes / después ---------- */
         .ba-grid {
@@ -359,8 +354,9 @@
 
             .portada-title { font-size: 40px; letter-spacing: -2px; }
             .brands-label { margin-top: 40px; font-size: 10px; letter-spacing: 3px; }
-            .brands-track { gap: 40px; }
-            .brands-track img { height: 30px; }
+            .brands-row { gap: 18px 28px; }
+            .brands-row { --lh: 24px; flex-wrap: wrap; }
+            .brands-row.top { --lh: 30px; }
 
             .ba-grid { grid-template-columns: 1fr; gap: 16px; margin-top: 24px; flex: none; }
             .ba-col { height: auto; }
@@ -450,8 +446,9 @@
             <div class="section-tag">Effix 2026</div>
             <h1 class="portada-title">De <span class="num">$0</span> a <span class="num">$50 millones</span> en 2 meses</h1>
             <div class="brands-label">Marcas con las que trabajamos</div>
-            <div class="brands-marquee">
-                <div class="brands-track" id="brandsTrack"></div>
+            <div class="brands-rows">
+                <div class="brands-row top" id="brandsTop"></div>
+                <div class="brands-row" id="brandsBottom"></div>
             </div>
         </div>
 
@@ -775,10 +772,14 @@
     <script>
         // Logos de marcas (de larealmarketing.com) — se duplican para el loop infinito
         // Algunos logos llevan alto propio para que se vean del mismo peso visual
-        const BRANDS = ['leonisa.png','natnack.svg','guuut.png','barba-roja.png','ciclico.png','parchita.png','mister-jack.png','once.png','gratitud.png','pachha.png','enkor.png','zorro-jaguar.png','khol.png','cambil.png','mantta.png','luckyme.png'];
-        const LOGO_HEIGHT = { 'natnack.svg': 19, 'guuut.png': 46 };
-        const brandsHTML = BRANDS.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_HEIGHT[b] ? ` style="height:${LOGO_HEIGHT[b]}px"` : ''}>`).join('');
-        document.getElementById('brandsTrack').innerHTML = brandsHTML + brandsHTML;
+        // Logos de marcas en 2 líneas: arriba las más grandes. Nunca incluir Kryolan.
+        const BRANDS_TOP = ['leonisa.png','parchita.png','barba-roja.png','ciclico.png','natnack.svg','guuut.png','once.png'];
+        const BRANDS_BOTTOM = ['mister-jack.png','gratitud.png','pachha.png','zorro-jaguar.png','enkor.png','khol.png','cambil.png','mantta.png','luckyme.png'];
+        // Alto propio (en proporción al alto base) para que todos pesen igual visualmente
+        const LOGO_SCALE = { 'natnack.svg': 0.42, 'guuut.png': 1.05, 'parchita.png': 1.2 };
+        const logosHTML = list => list.map(b => `<img src="logos/${b}" alt="${b.split('.')[0]}"${LOGO_SCALE[b] ? ` style="height:calc(${LOGO_SCALE[b]} * var(--lh))"` : ''}>`).join('');
+        document.getElementById('brandsTop').innerHTML = logosHTML(BRANDS_TOP);
+        document.getElementById('brandsBottom').innerHTML = logosHTML(BRANDS_BOTTOM);
 
 
 
