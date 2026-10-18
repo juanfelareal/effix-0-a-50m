@@ -323,6 +323,18 @@
         .wall-mail img { width: 100%; height: auto; display: block; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 20px rgba(0,0,0,0.10); }
         .wall-mail span { font-size: 11px; font-weight: 800; color: #0D1B2A; white-space: nowrap; }
 
+        /* ---------- Showcase: piezas de pauta y videos UGC (misma altura, ancho según proporción) ---------- */
+        .showcase {
+            --h: min(calc(100vh - 340px), calc((100vw - 260px) / var(--sum)));
+            display: flex; gap: 14px; margin-top: 32px; width: calc(var(--h) * var(--sum) + 70px); max-width: 100%;
+        }
+        .show-item { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .show-item img, .show-item video {
+            width: 100%; height: auto; display: block; border-radius: 14px; background: #0D1B2A;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 10px 28px rgba(0,0,0,0.12);
+        }
+        .show-item span { font-size: 13px; font-weight: 800; color: #0D1B2A; white-space: nowrap; }
+
         /* ---------- Navegación ---------- */
         .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 10px; z-index: 100; }
         .nav-btn {
@@ -427,6 +439,8 @@
             .wall { width: 100%; }
             .wall-row { width: 100%; flex-wrap: wrap; }
             .wall-mail { flex: 0 0 calc(50% - 5px) !important; }
+            .showcase { width: 100%; flex-wrap: wrap; }
+            .show-item { flex: 0 0 calc(50% - 7px) !important; }
             .real-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; margin-top: 24px; }
             .real-letter { font-size: 96px; letter-spacing: -4px; }
             .real-arrow { height: 48px; margin: 10px 0 12px; }
@@ -449,7 +463,7 @@
         <div class="slide slide-dark slide-portada" id="slide1">
             <div class="section-tag">Effix 2026</div>
             <h1 class="portada-title">De <span class="num">$0</span> a <span class="num">$50 millones</span> en 2 meses</h1>
-            <div class="brands-label">Marcas con las que trabajamos</div>
+            <div class="brands-label">Marcas que confían en nosotros</div>
             <div class="brands-rows">
                 <div class="brands-row top" id="brandsTop"></div>
                 <div class="brands-row" id="brandsBottom"></div>
@@ -674,8 +688,36 @@
             <div class="kicker">Cada ángulo, <span class="highlight">en todos los formatos.</span></div>
         </div>
 
-        <!-- ============ SLIDE 12 — E EFICIENCIA ============ -->
+        <!-- ============ SLIDE 12 — PIEZAS GRÁFICAS DE PAUTA ============ -->
         <div class="slide slide-light" id="slide12">
+            <div class="section-tag">Formatos · Estático</div>
+            <h2>Piezas gráficas para pauta</h2>
+            <div class="showcase" style="--sum: 4.050">
+                <div class="show-item" style="flex: 0.562"><img src="pauta/guuut.jpg" alt="Pieza de pauta Guuut"><span>Guuut</span></div>
+                <div class="show-item" style="flex: 0.800"><img src="pauta/adriza.jpg" alt="Pieza de pauta Adriza"><span>Adriza</span></div>
+                <div class="show-item" style="flex: 1.000"><img src="pauta/bites.jpg" alt="Pieza de pauta Bites"><span>Bites</span></div>
+                <div class="show-item" style="flex: 0.562"><img src="pauta/estruendo.jpg" alt="Pieza de pauta Estruendo"><span>Estruendo</span></div>
+                <div class="show-item" style="flex: 0.562"><img src="pauta/dulcey.jpg" alt="Pieza de pauta Dulcey"><span>Dulcey</span></div>
+                <div class="show-item" style="flex: 0.562"><img src="pauta/detalles-del-campo.jpg" alt="Pieza de pauta Detalles del Campo"><span>Detalles del Campo</span></div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 13 — VIDEOS UGC ============ -->
+        <div class="slide slide-light" id="slide13">
+            <div class="section-tag">Formatos · Video UGC</div>
+            <h2>Videos UGC</h2>
+            <div class="showcase" style="--sum: 3.375">
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-educacion.mp4" poster="ugc/sufi-educacion.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-pregunta.mp4" poster="ugc/si-pregunta.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-fraudes.mp4" poster="ugc/sufi-fraudes.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-rutina.mp4" poster="ugc/si-rutina.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/sufi-estilo-de-vida.mp4" poster="ugc/sufi-estilo-de-vida.jpg" muted loop playsinline preload="metadata"></video><span>SUFI</span></div>
+                <div class="show-item" style="flex: 0.562"><video class="ugc-video" src="ugc/si-creatina.mp4" poster="ugc/si-creatina.jpg" muted loop playsinline preload="metadata"></video><span>Sin Intermediarios</span></div>
+            </div>
+        </div>
+
+        <!-- ============ SLIDE 14 — E EFICIENCIA ============ -->
+        <div class="slide slide-light" id="slide14">
             <div class="section-tag">Método REAL</div>
             <div class="stage-title">
                 <div class="stage-letter">E</div>
@@ -686,8 +728,8 @@
             </div>
         </div>
 
-        <!-- ============ SLIDE 13 — A AMPLIFICACIÓN ============ -->
-        <div class="slide slide-light" id="slide13">
+        <!-- ============ SLIDE 15 — A AMPLIFICACIÓN ============ -->
+        <div class="slide slide-light" id="slide15">
             <div class="section-tag">Método REAL</div>
             <div class="stage-title">
                 <div class="stage-letter">A</div>
@@ -705,8 +747,8 @@
             </div>
         </div>
 
-        <!-- ============ SLIDE 14 — L LEALTAD + EMAILS ============ -->
-        <div class="slide slide-light" id="slide14">
+        <!-- ============ SLIDE 16 — L LEALTAD + EMAILS ============ -->
+        <div class="slide slide-light" id="slide16">
             <div class="loyal-layout">
                 <div class="loyal-text">
                     <div class="section-tag">Método REAL</div>
@@ -744,8 +786,8 @@
             </div>
         </div>
 
-        <!-- ============ SLIDE 15 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
-        <div class="slide slide-dark slide-cierre" id="slide15">
+        <!-- ============ SLIDE 17 — ÚLTIMOS CONSEJOS (CIERRE) ============ -->
+        <div class="slide slide-dark slide-cierre" id="slide17">
             <img src="logo-la-real.png" alt="LA REAL" style="width: 110px; margin-bottom: 36px; opacity: 0.9;">
             <h2>Últimos <span class="highlight">consejos</span></h2>
             <div class="tips">
@@ -767,7 +809,7 @@
     </div>
 
     <div class="progress" id="progress"></div>
-    <div class="slide-counter" id="slideCounter">1 / 15</div>
+    <div class="slide-counter" id="slideCounter">1 / 17</div>
     <div class="fullscreen-hint" id="fullscreenHint">Presiona F para pantalla completa</div>
     <div class="navigation">
         <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
@@ -791,7 +833,7 @@
 
 
         let currentSlide = 1;
-        const totalSlides = 15;
+        const totalSlides = 17;
 
         function showSlide(n) {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -814,6 +856,11 @@
             // Logo adapts to slide theme
             const logoEl = document.getElementById('logoSmall');
             if (logoEl) logoEl.style.opacity = isLight ? '0.4' : '0.7';
+
+            // Videos UGC: se reproducen solo en su slide (en PDF queda la imagen de portada)
+            document.querySelectorAll('.ugc-video').forEach(v => {
+                if (slide.contains(v)) { v.currentTime = 0; v.play().catch(() => {}); } else { v.pause(); }
+            });
 
             // Reset scroll for mobile
             slide.scrollTop = 0;
