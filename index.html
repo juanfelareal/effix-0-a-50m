@@ -346,6 +346,14 @@
         .ig-tag { font-size: 12px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: #94A3B8; }
         .ig-handle { font-size: 34px; font-weight: 900; letter-spacing: -1px; color: #4ADE80; margin-top: 4px; }
 
+        /* ---------- Modo exportación (?export): sin controles, para generar el PDF ---------- */
+        .export .navigation, .export .slide-counter, .export .fullscreen-hint, .export .progress { display: none !important; }
+        .export .slide { transition: none; }
+
+        .slide-centered { justify-content: center; padding-bottom: 140px; }
+        .slide-centered .stage-logo-card { margin-top: 56px; padding: 80px 110px; }
+        .slide-centered .stage-logo-card img { width: 600px; }
+
         /* ---------- Navegación ---------- */
         .navigation { position: fixed; bottom: 30px; right: 30px; display: flex; gap: 10px; z-index: 100; }
         .nav-btn {
@@ -757,7 +765,7 @@
         </div>
 
         <!-- ============ SLIDE 14 — E EFICIENCIA ============ -->
-        <div class="slide slide-light" id="slide14">
+        <div class="slide slide-light slide-centered" id="slide14">
             <div class="section-tag">Método REAL</div>
             <div class="stage-title">
                 <div class="stage-letter">E</div>
@@ -879,6 +887,10 @@
 
 
 
+        // Modo exportación para PDF: index.html?export#n
+        const EXPORT_MODE = new URLSearchParams(location.search).has('export');
+        if (EXPORT_MODE) document.documentElement.classList.add('export');
+
         let currentSlide = 1;
         const totalSlides = 17;
 
@@ -906,7 +918,7 @@
 
             // Videos UGC: se reproducen solo en su slide (en PDF queda la imagen de portada)
             document.querySelectorAll('.ugc-video').forEach(v => {
-                if (slide.contains(v)) { v.currentTime = 0; v.play().catch(() => {}); } else { v.pause(); }
+                if (slide.contains(v) && !EXPORT_MODE) { v.currentTime = 0; v.play().catch(() => {}); } else { v.pause(); }
             });
 
             // Reset scroll for mobile
