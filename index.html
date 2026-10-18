@@ -120,6 +120,10 @@
         .ba-mid .ba-arrow { margin-top: 0; }
         .ba-span { font-size: 15px; font-weight: 800; color: #0D1B2A; text-align: center; line-height: 1.3; max-width: 130px; }
         .ba-span strong { display: block; white-space: nowrap; font-size: 34px; font-weight: 900; letter-spacing: -1.5px; color: #16a34a; }
+        .ba-note {
+            max-width: 170px; text-align: center; font-size: 15px; font-weight: 700; line-height: 1.4; color: #6b7280;
+            padding-top: 12px; border-top: 1px solid rgba(13,27,42,0.12);
+        }
         .ba-arrow {
             width: 56px; height: 56px; border-radius: 50%; background: #0D1B2A;
             display: flex; align-items: center; justify-content: center; margin-top: 40px;
@@ -360,6 +364,8 @@
             .ba-mid { margin-top: 0; flex-direction: row; justify-content: center; }
             .ba-mid .ba-arrow { margin: 0; }
             .ba-span { max-width: none; text-align: left; }
+            .ba-mid { flex-wrap: wrap; }
+            .ba-note { max-width: none; flex-basis: 100%; border-top: none; padding-top: 0; }
 
             .principles { grid-template-columns: 1fr; gap: 14px; margin-top: 28px; }
             .principle { padding: 26px 22px; gap: 14px; }
@@ -456,6 +462,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </div>
                     <div class="ba-span"><strong>8 años</strong>de esto a esto</div>
+                    <div class="ba-note">No existía Higgsfield, ni ChatGPT, ni Claude</div>
                 </div>
                 <div class="ba-col">
                     <div class="ba-label despues">Después</div>
